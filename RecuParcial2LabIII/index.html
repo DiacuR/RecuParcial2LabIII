@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="index.css"/>
+    <script src="https://kit.fontawesome.com/56b0bd88f9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main>
+        <div>
+            <p id="TituloDePagina">
+                Administracion
+            </p>
+        </div>
+        <div>
+            <p id="TituloForm">
+                Llena el formulario de alta
+            </p>
+            <p id="subtitulo">
+                Datos de la Persona
+            </p>
+            <div id="formulario">
+                <label class="labels" for="titulo">Id: </label><br>
+                <input class="inputNormal" type="text" name="id" id="id" placeholder="Id..." readonly/><br>
+
+                <label class="labels" for="nombre">Nombre: </label><br>
+                <input class="inputNormal" type="text" name="nombre" id="name" placeholder="Nombre..." required/><br>
+
+                <label class="labels" for="apellido">Apellido: </label><br>
+                <input class="inputNormal" type="text" name="apellido" id="lastName" placeholder="Apellido..." required/><br>
+
+                <label class="labels" for="edad">Edad: </label><br>
+                <input class="inputNormal" type="number" min="1" name="edad" id="age" placeholder="Edad..." required/><br>
+
+                <label class="labels" >Sexo: </label><br>
+                <select name="select" id="ElegirSexo">
+                    <option disabled selected>---- Elegir ----</option> 
+                    <option value="Male">Masculino</option> 
+                    <option value="Female">Femenino</option>
+                </select><br>
+
+                
+                <div>
+                    <button class="btnExito" id="btnGuardar">
+                        <i class="fas fa-save"></i> 
+                        Guardar
+                    </button>
+                    <button class="btnEdit" id="btnLimpiar">
+                        <i class="fas fa-minus-circle"></i>
+                        Limpiar
+                    </button>
+                    <button class="btnPeligro" id="btnEliminar">
+                        <i class="fas fa-trash-alt"></i>
+                        Eliminar
+                    </button>                    
+                </div>
+            </div>
+        </div>
+        <div id="buscarPorFiltros">
+            <div id="filtros">
+                <div>
+                    <p>Mostrar columnas</p>
+                </div>
+                <div>
+                    <input type="checkbox" name="id" id="cbID" checked>
+                    <label for="id">Id</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="nombre" id="cbNombre" checked>
+                    <label for="nombre">Nombre</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="apellido" id="cbApellido" checked>
+                    <label for="apellido">Apellido</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="edad" id="cbEdad" checked>
+                    <label for="edad">Edad</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="sexo" id="cbSexo" checked>
+                    <label for="sexo">Sexo</label>
+                </div>
+                <div>
+                    <input class ="btnFormulario"type="button" value="Filtrar" id="filtrar">
+                </div>
+            </div>
+
+            <div id="formBuscar">
+                <div>
+                    <label class="labels" >Sexo: </label>
+                    <select name="select" id="FiltrarPorSexo">
+                        <option disabled selected>---- Elegir ----</option> 
+                        <option value="Male">Masculino</option> 
+                        <option value="Female">Femenino</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="">Promedio de Edad</label>
+                    <input class="inputNormal" type="number" id="txtPromedio" placeholder="Promedio" readonly/><br>
+                    <button class="btnFormulario" id="btnBuscar">
+                        <i class="fas fa-search"></i>
+                        Buscar
+                    </button>
+                </div>
+            </div>
+            <div class="tabla">
+                <div id="fondo">
+                    <div id="spinner">
+                        
+                    </div>
+                </div>        
+                <div id="divTabla"></div>
+            </div>
+        </div>
+    </main>
+    <script src="./js/persona.js"></script>
+    <script src="./js/cliente.js"></script>
+    <script src="./js/utils.js"></script>
+    <script src="./js/tabla.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
